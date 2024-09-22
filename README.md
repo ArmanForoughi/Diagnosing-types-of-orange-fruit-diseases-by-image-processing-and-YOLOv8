@@ -1,0 +1,1 @@
+# Diagnosing-types-of-orange-fruit-diseases-by-image-processing-and-YOLOv8

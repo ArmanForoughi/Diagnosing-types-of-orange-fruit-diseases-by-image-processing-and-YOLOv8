@@ -8,7 +8,9 @@ from ultralytics import YOLO
 model = YOLO("yolo_orange.pt")
 
 start_time = 14
-
+email_receiver = "inter your email"
+email_sender = "inter your email"
+password_email = "inter your password two stagefor email"
 
 path1 = os.getcwd()+"/pic_camera"
 os.chdir(path1)
@@ -25,14 +27,14 @@ def remove_noise(gray, num):
     return result
 
 def send_mail_function(msg):
-    recipientEmail = "armanforoughi36@gmail.com"
+    recipientEmail = email_receiver
     recipientEmail = recipientEmail.lower()
     try:
         server = smtplib.SMTP('smtp.gmail.com', 587)
         server.ehlo()
         server.starttls()
-        server.login("armanforoughi65@gmail.com", 'wweepiiqcyuonkns')
-        server.sendmail('armanforoughi65@gmail.com', recipientEmail, msg)
+        server.login(email_sender, password_email )
+        server.sendmail(email_sender, recipientEmail, msg)
         print("sent to {}".format(recipientEmail))
         server.close()
     except Exception as e:
